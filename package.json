@@ -1,0 +1,19 @@
+{
+  "name": "friendfinder",
+  "version": "1.0.0",
+  "description": "A application that compares the user to other members in the database and matches them with their best friend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BradFabian/friendFinder.git"
+  },
+  "author": "Brad",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BradFabian/friendFinder/issues"
+  },
+  "homepage": "https://github.com/BradFabian/friendFinder#readme"
+}
