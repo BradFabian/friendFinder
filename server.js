@@ -15,8 +15,8 @@ app.use(bodyParser.json());
 
 //roadMap to routes
 
-require("/app/routing/apiroutes")(app);
-require("/app/routing/htmlroutes")(app);
+require("./app/routing/apiroutes")(app);
+require("./app/routing/htmlroutes")(app);
 
 app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
