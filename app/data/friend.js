@@ -48,5 +48,5 @@ var friendArray = [
       ]
   }
 ];
-
+//export array//
 module.exports = friendArray;

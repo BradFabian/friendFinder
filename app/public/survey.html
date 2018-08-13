@@ -23,7 +23,18 @@
                       </button>
                     </div>
                     <div class="modal-body">
-                      We Got A Modal!!
+                      <div class="row">
+                        <div class="col-6" id="match-name">
+
+                        </div>
+                        <div class="col-6" id="match-img">
+
+
+                        </div>
+                        <div class="col-8" id="match-result">
+
+                        </div>
+                      </div>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -443,14 +454,14 @@
         };
 
         // AJAX post the data to the friends API.
-        $.post("/api/friends", userData, function(data) {
+        $.post("/api/friend", userData, function(data) {
 
           // Grab the result from the AJAX post so that the best match's name and photo are displayed.
           $("#match-name").text(data.name);
           $("#match-img").attr("src", data.photo);
 
           // Show the modal with the best match
-          $("#results-modal").modal("toggle");
+          $("#match-result").modal("toggle");
 
         });
       } else {

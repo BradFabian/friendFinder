@@ -37,7 +37,7 @@ module.exports = function(app) {
 
 
     // Loop through the length of the friendsData JSON
-    for (var i = 0; i < friendsData.length; i++) {
+    for (var i = 0; i < friendArray.length; i++) {
 
       // Initial difference is 0
       var difference = 0;
@@ -45,7 +45,7 @@ module.exports = function(app) {
       // Loop throug the length of the userScores
       for (var j = 0; j < userScores.length; j++) {
           // Adds the absolute value of userScores at specific index minus the friendsData score at the same index TO the difference variable
-          difference += Math.abs(userScores[j] - friendsData[i].scores[j]);
+          difference += Math.abs(userScores[j] - friendArray[i].scores[j]);
 
           // If difference is less than or equal to the Match's difference (100) then change value of userMatch properties
           if (difference <= friendMatch.difference) {
