@@ -1,4 +1,4 @@
-var friendData = require("../data/friend");
+var friendData = require("../data/friend.js");
 
 
 
@@ -7,36 +7,64 @@ var friendData = require("../data/friend");
 // ===============================================================================
 
 module.exports = function(app) {
-  // API GET Requests
-  // Below code handles when users "visit" a page.
-  // In each of the below cases when a user visits a link
-  // (ex: localhost:PORT/api/admin... they are shown a JSON of the data in the table)
-  // ---------------------------------------------------------------------------
+  
 
-  app.get("/api/friends", function(req, res) {
+  app.get("/api/friend/", function(req, res) {
     res.json(friendData);
   });
 
   
 
-  // API POST Requests
-  // Below code handles when a user submits a form and thus submits data to the server.
-  // In each of the below cases, when a user submits form data (a JSON object)
-  // ...the JSON is pushed to the appropriate JavaScript array
-  // (ex. User fills out a reservation request... this data is then sent to the server...
-  // Then the server saves the data to the tableData array)
-  // ---------------------------------------------------------------------------
 
-  app.post("/api/friends", function(req, res) {
-    // Note the code here. Our "server" will respond to requests and let users know if they have a table or not.
-    // It will do this by sending out the value "true" have a table
-    // req.body is available since we're using the body-parser middleware
-    
+  app.post("/api/friend/", function(req, res) {
+
+
+    // Object that defines userMatch and its initial values
+    var friendMatch = {
+      name: "",
+      photo: "",
+      difference: 50,
+      scores: ""
+  };
+  
+  
+  var friend = req.body;
+  console.log(friend);
+
+  
+  var userScores = friend.scores;
+
+
+
+    // Loop through the length of the friendsData JSON
+    for (var i = 0; i < friendsData.length; i++) {
+
+      // Initial difference is 0
+      var difference = 0;
+
+      // Loop throug the length of the userScores
+      for (var j = 0; j < userScores.length; j++) {
+          // Adds the absolute value of userScores at specific index minus the friendsData score at the same index TO the difference variable
+          difference += Math.abs(userScores[j] - friendsData[i].scores[j]);
+
+          // If difference is less than or equal to the Match's difference (100) then change value of userMatch properties
+          if (difference <= friendMatch.difference) {
+              userMatch.name = friendArray[i].name;
+              userMatch.photo = friendArray[i].photo;
+              userMatch.difference = difference;
+              userMatch.scores = friendArray[i].scores;
+          };
+       
+      };
+  };
+
+
+      console.log(friendMatch);
       friendData.push(req.body);
-      
+      res.json(friendMatch);
     
     
   });
 
-  //
+  
 };
