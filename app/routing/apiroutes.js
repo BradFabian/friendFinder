@@ -60,7 +60,7 @@ module.exports = function(app) {
 
 
       console.log(friendMatch);
-      friendData.push(req.body);
+      friendData.push(friend);
       res.json(friendMatch);
     
     
