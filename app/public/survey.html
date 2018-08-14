@@ -25,7 +25,7 @@
 
     <div class="container">
         <br>
-        <div class="jumbotron jumbotron-fluid text-center mdb-color lighten-2 white-text z-depth-2" "card card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg);">
+        <div class="jumbotron jumbotron-fluid text-center mdb-color lighten-2 white-text z-depth-2">
             <h1>
                 <i class="fas fa-user-friends" aria-hidden="true"></i> Survey Questions</h1>
                 <div>
@@ -202,14 +202,11 @@
             <i class="fa fa-check-circle" aria-hidden="true"></i>Submit</button>
 
         <hr>
-        <footer class="footer">
-            <div class="container">
-                <p>
-                    <a href="/api/friends">API Friends List</a> |
-                    <a href="https://github.com/ofuen/FriendFinder">GitHub Repo</a>
-                </p>
-            </div>
-        </footer>
+        <div class="footer col-12 text-center">
+
+          <p><a href="/api/friend" target="_blank" style="text-decoration:none; color:black">API Friends Link</a> | <a href="https://github.com/BradFabian/friendFinder" target="_blank" style="text-decoration:none; color:black">GitHub Link</a></p>
+  
+        </div>
 
     </div>
 
@@ -227,7 +224,7 @@
                 </div>
                 <div class="modal-body">
                     <h2 id="match-name"></h2>
-                    <img id="match-img" src="https://media.giphy.com/media/l41lXkx9x8OTM1rwY/giphy.gif" alt="">
+                    <img id="match-img" src="" alt="">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -295,7 +292,7 @@
                     ]
                 };
                 // AJAX post the data to the friends API.
-                $.post("/api/friends", userData, function (data) {
+                $.post("/api/friend", userData, function (data) {
                     // Grab the result from the AJAX post so that the best match's name and photo are displayed.
                     $("#match-name").text(data.name);
                     $("#match-img").attr("src", data.photo);
